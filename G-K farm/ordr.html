@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="ordr.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <meta content="text/html; charset=UTF-8">
+  <script src="ordr.js"></script>
+
+  <!-- <script>
+  function validateEmail(sEmail) {
+    var reEmail = /^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!\.)){0,61}[a-zA-Z0-9]?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/;
+  
+    if(!sEmail.match(reEmail)) {
+      // alert("Invalid email address");
+      // return false;
+      document.getElementById("demoe").innerHTML="(Invalid email)"
+    }
+  
+    validFunction();
+  
+  }
+  </script> -->
+
+</head>
+
+<body>
+  <!-- <p><span id='nm'></span></p>
+  <p><span id='pn'></span></p>
+  <p><span id='loc'></p>
+  <p><span id="ca"></span>:<span id="brd"></span></span></p>
+  <p><span id='rd'></span></p>
+  <p><span id='display8'></span></p> -->
+  <div id="rslt">
+    <div class="ab">
+
+      <div class="container">
+
+        <h2>Order Conformation</h2>
+
+
+        <table style="width:100%">
+          <tr>
+            <th>Name</th>
+            <td id='nm'></td>
+          </tr>
+          <tr>
+            <th>Phone</th>
+            <td id='pn'></td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td id='eml'></td>
+          </tr>
+          <tr>
+            <th>Location</th>
+            <td id='loc'></td>
+          </tr>
+          <tr>
+            <th>Category</th>
+            <td id='ca'>=</td>
+          </tr>
+          <tr>
+            <th>Breed</th>
+
+            <td id='brd'></td>
+          </tr>
+          <!-- <tr>
+            <th>Service Methord</th>
+            <td id='ch1'></td>
+            <br><td id='ch2'></td>
+          </tr> -->
+
+          <tr>
+            <th>Payment</th>
+            <td id='rd'></td>
+          </tr>
+
+          <tr>
+            <td id=''></td>
+          </tr>
+
+        </table><br>
+        <input type="button" value="Proceed">
+
+      </div>
+    </div>
+  </div>
+  <!-- <script>
+
+    document.getElementById("rslt").style.visibility ="hidden"
+
+</script> -->
+
+  <div id="dh">
+
+    <div class="ab">
+      <form>
+
+        <div class="container">
+          <h1 style="text-align:center">Order Form</h1>
+
+          <br><br>
+
+          <div class="row">
+            <div class="form-input-text ">
+              <label class="lb" for="text"><b>Name</b><span class="star">*</span></label>
+
+            </div>
+            <input type="text" id="name" placeholder="Enter Name" name="name" required>
+            <div class="row">
+              <span id="demo" style="color: red;"></span>
+            </div>
+
+            <br>
+
+
+            <div class="row">
+              <div class="form-input-text ">
+                <label class="lb" for="phone"><b>Phone</b><span class="star">*</span></label>
+              </div>
+              <input type="text" id="phone" placeholder="Phone Number">
+
+            </div>
+            <div class="row">
+              <span id="demop" style="color: red;"></span>
+            </div>
+            <br>
+
+            <div class="row">
+              <div class="form-input-text ">
+                <label class="lb" for="email"><b>Email</b><span class="star">*</span></label>
+              </div>
+              <input type="text" id="email" placeholder="example@.com" name="email" required>
+
+            </div>
+            <div class="row">
+              <span id="demoe" style="color: red;"></span>
+            </div>
+            <br>
+
+
+
+            <div class="row">
+              <div class="form-input-text ">
+                <label class="lb" for="location"><b>Location</b><span class="star">*</span></label>
+              </div>
+
+              <select name="lctn" id="location" required style="width:141px">
+                <option disabled selected>Select</option>
+                <option value="Vatakara">Vatakara</option>
+                <option value="Koyilandi">Koyilandi</option>
+                <option value="Kozhikode">Kozhikode</option>
+            </div>
+            </select>
+            <div class="row">
+              <span id="demol" style="color: red;"></span>
+            </div>
+            <br><br><br>
+
+
+            <!-- ************************************** -->
+            <div class="row">
+              <div class="form-input-text ">
+                <label class="lb" for="category"><b>Category</b><span class="star">*</span></label>
+              </div>
+              <select id="categorySelect" size="1" onchange="makeSubmenu(this.value)" style="width:141px">
+                <option disabled selected>Select</option>
+                <option>Dairy</option>
+                <option>Poultry</option>
+                <option>Farm</option>
+              </select>
+            </div><br><br><br>
+
+            <div class="row">
+              <div class="form-input-text ">
+                <label class="lb" for="breed"><b>Breed</b><span class="star">*</span></label>
+              </div>
+            </div>
+            <select id="breedSelect" size="3" style="width:141px">
+
+            </select>
+            <br><br><br>
+
+            <!-- ************************************** -->
+            <br><br>
+            <h3>Service Required</h3>
+
+
+            <label for="cage"> Cage</label>
+            <input type="checkbox" id="chb1" name="chb1" value="Cage">
+            <label for="Transport"> Transport</label>
+            <input type="checkbox" id="chb2" name="chb2" value="Transport">
+            <br>
+            <br>
+            <!-- Radiobutton -->
+            <h3>Payment mode</h3>
+            <input type="radio" name="pay" value="Online">
+            <label for="male">Online</label>
+            <input type="radio" name="pay" value="COD">
+            <label for="female">COD</label>
+
+            <br><br><br>
+            <center>
+              <input type="reset" value="Cancel" style="float: left" onclick="checkEmail()">
+              <input type="button" value="Submit" style="float: lright ; margin-left:70px" onclick="validFunction()">
+            </center>
+            <!-- <button onclick="displaySelected()">show selected</button>
+        <button onclick="resetSelection()">cancel</button> -->
+          </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
